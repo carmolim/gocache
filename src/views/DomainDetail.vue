@@ -89,7 +89,7 @@
                         <strong class="text-gray-dark">Adiciona na requisição informações relacionadas à geolocalização.</strong>
 
                         <div class="my-3 my-md-0">
-                            <Switch label="" setting="deviceType" :domain=domain v-model:checked=domain.deviceType />
+                            <Switch label="" setting="deviceType" :domainId=domain.id v-model:checked=domain.deviceType />
                         </div>
                     
                     </div>
@@ -127,9 +127,9 @@
                         
                         <div class="d-flex my-3 my-md-0">
 
-                            <Switch label="País" setting="geoPais" :domain=domain v-model:checked=domain.geoPais />
-                            <Switch label="Continente" setting="geoContinente" :domain=domain v-model:checked=domain.geoContinente />
-                            <Switch label="Organização" setting="geoOrganizacao" :domain=domain v-model:checked=domain.geoOrganizacao />
+                            <Switch label="País" setting="geoPais" :domainId=domain.id :checked=domain.geoPais />
+                            <Switch label="Continente" setting="geoContinente" :domainId=domain.id :checked=domain.geoContinente />
+                            <Switch label="Organização" setting="geoOrganizacao" :domainId=domain.id :checked=domain.geoOrganizacao />
 
                         </div>
 

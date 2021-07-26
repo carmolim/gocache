@@ -41,7 +41,7 @@ export default {
         label:String,
         setting:String,
         checked:Boolean,
-        domain:Object
+        domainId:String
     },
 
     setup(props){
@@ -55,11 +55,10 @@ export default {
 
         async function updateSetting(){
 
-            const tempDomain = props.domain
-            tempDomain[props.setting] = !props.checked   
+            const settingToUpdate = JSON.parse(`{"${props.setting}": ${!props.checked} }`)
 
             try{
-                const result = await axios.put(`http://localhost:3000/domains/${tempDomain.id}`, tempDomain)
+                const result = await axios.patch(`http://localhost:3000/domains/${props.domainId}`, settingToUpdate )
                 setAlert('success', `Alteração salva com sucesso!`, '')
             }
 
